@@ -95,7 +95,7 @@ export default class CaptionArea extends React.Component<IProps, IState>{
 
 
 
-            fetch("https://sakyaapi.azurewebsites.net/api/Videos/GetRandomVideo", {
+            fetch("https://guesssongapi.azurewebsites.net/api/Videos/GetRandomVideo", {
                 headers: {
                     Accept: "text/plain"
                 },
@@ -112,7 +112,7 @@ export default class CaptionArea extends React.Component<IProps, IState>{
             })
 
             // Get Random transcription and change its like value
-            fetch("https://sakyaapi.azurewebsites.net/api/Transcriptions/GetRandomTranscription", {
+            fetch("https://guesssongapi.azurewebsites.net/api/Transcriptions/GetRandomTranscription", {
                 headers: {
                     Accept: "text/plain"
                 },
@@ -144,7 +144,7 @@ export default class CaptionArea extends React.Component<IProps, IState>{
             "path": "/isFavourite",
             "value": true,
         }]
-        fetch("https://sakyaapi.azurewebsites.net/api/Videos/update/" + video.videoId, {
+        fetch("https://guesssongapi.azurewebsites.net/api/Videos/update/" + video.videoId, {
             body: JSON.stringify(toSend),
             headers: {
                 // Tell the fetch so it knows what to accept 

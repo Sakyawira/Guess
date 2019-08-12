@@ -27,7 +27,7 @@ export default class LeaderBoard extends React.Component<IProps, IState>{
         
 
     public search = () => {
-        fetch('https://sakyaapi.azurewebsites.net/api/LeaderBoards',{
+        fetch('https://guesssongapi.azurewebsites.net/api/LeaderBoards',{
             method:'GET'
 
             // if returned, then convert into .json

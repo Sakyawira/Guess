@@ -43,7 +43,7 @@ class App extends React.Component<{}, IState>{
     this.state = {
       body: [],
 
-      hubConnection: new this.signalR.HubConnectionBuilder().withUrl("https://sakyaapi.azurewebsites.net/hub").build(),
+      hubConnection: new this.signalR.HubConnectionBuilder().withUrl("https://guesssongapi.azurewebsites.net/hub").build(),
       input: "",
       isLoading: false,
       lives: 3,
@@ -58,7 +58,7 @@ class App extends React.Component<{}, IState>{
   }
 
   public printBoard = () => {
-    fetch('https://sakyaapi.azurewebsites.net/api/LeaderBoards', {
+    fetch('https://guesssongapi.azurewebsites.net/api/LeaderBoards', {
       method: 'GET'
 
       // if returned, then convert into .json
@@ -142,7 +142,7 @@ class App extends React.Component<{}, IState>{
 
   public addVideo = (url: string) => {
     const body = { "url": url }
-    fetch("https://sakyaapi.azurewebsites.net/api/Videos", {
+    fetch("https://guesssongapi.azurewebsites.net/api/Videos", {
       body: JSON.stringify(body),
       headers: {
         Accept: "text/plain",
@@ -160,8 +160,8 @@ class App extends React.Component<{}, IState>{
 
     const body = { "playerName": name, "score": this.state.score }
 
-    fetch("https://sakyaapi.azurewebsites.net/api/LeaderBoards", {
-      //  fetch("https://sakyaapi.azurewebsites.net/api/Videos", {
+    fetch("https://guesssongapi.azurewebsites.net/api/LeaderBoards", {
+      //  fetch("https://guesssongapi.azurewebsites.net/api/Videos", {
       // convert body to a string and put it into a json file
       body: JSON.stringify(body),
 

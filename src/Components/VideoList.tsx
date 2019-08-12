@@ -63,8 +63,8 @@ class VideoList extends React.Component<IProps,IState>{
     public deleteVideo = (id:any) => {
         this.setState({isLoadingDel: true});  
         // this.updateList();
-        // fetch("https://sakyaapi.azurewebsites.net/api/Videos/"+id,{
-        fetch("https://sakyaapi.azurewebsites.net/api/Videos/"+id,{
+        // fetch("https://guesssongapi.azurewebsites.net/api/Videos/"+id,{
+        fetch("https://guesssongapi.azurewebsites.net/api/Videos/"+id,{
             // use the delete method
        
             method:'DELETE'
@@ -94,7 +94,7 @@ class VideoList extends React.Component<IProps,IState>{
 
     // update function that fecth the API
     public updateList = () => {
-        fetch('https://sakyaapi.azurewebsites.net/api/Videos',{
+        fetch('https://guesssongapi.azurewebsites.net/api/Videos',{
             method:'GET'
 
             // if returned, then convert into .json
@@ -158,7 +158,7 @@ class VideoList extends React.Component<IProps,IState>{
             "path":"/isFavourite",
             "value":!video.isFavourite,
         }]
-        fetch("https://sakyaapi.azurewebsites.net/api/Videos/update/"+video.videoId, {
+        fetch("https://guesssongapi.azurewebsites.net/api/Videos/update/"+video.videoId, {
             body:JSON.stringify(toSend),
             headers: {
                 // Tell the fetch so it knows what to accept 
