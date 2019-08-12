@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  background-color: #F5F5F5;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #6D6D6D;
+  float: left;
+  padding-top: 0px;
+}
+
+.red-heading {
+  color: #cc3333;
+  padding-top: 0px;
+ /* font-size: 28px; */
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #6D6D6D;
+  float: left;
+  padding: 1px;
+}
+
+.red-heading2 {
+  color: #cc3333;
+  padding-top: 10px;
+ /* font-size: 28px; */
+}
+
+.lyric-heading {
+  color: #cc3333;
+  font-size: 15px;
+  margin-left: 1pxl;
+  margin-right: 1pxl;
+  margin-bottom: 1pxl;
+  margin-top: 1pxl;
+  /* float: right; */
+  /* padding: 30px; */
+}
+
+.title-heading {
+  color: rgb(20, 1, 1);
+  font-size: 15px;
+  margin-left: 1pxl;
+  margin-right: 1pxl;
+  margin-bottom: 1pxl;
+  margin-top: 1pxl;
+  padding: 30px;
+}
+
+.play-heading {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.table {
+  background-color: #F5F5F5;
+  font-size: 12px;
+}
+
+.table td, .table th {
+  background-color: #F5F5F5;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.video-list {
+  background-color: #F5F5F5;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 390px;
+}
+
+.video-list button {
+  border: none;
+  background-color: #F5F5F5;
+}
+
+.video-list > .table {
+  background-color: #F5F5F5;
+  cursor: pointer;
+}
+
+.video-list-close {
+  background-color: #F5F5F5;
+  width: 60px;
+}
+
+.caption-area {
+  background-color: #F5F5F5;
+  margin-top: 20px;
+  padding: 30px;
+}
+
+.captionTable {
+  cursor: pointer;
+}
+
+.player {
+  background-color: black;
+}
+
+.alert {
+  padding: 7px; 
+  width: 260px;
+  height: 39px;
+}
+
