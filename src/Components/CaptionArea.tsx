@@ -66,6 +66,8 @@ export default class CaptionArea extends React.Component<IProps, IState>{
         this.setState({ lives: 3 });
         this.props.iScore(0);
         this.props.iLives(3);
+        this.setState({question: []});
+        this.setState({body: []});
         this.setState({ isCorrect: "" });
         // this.search();
     }
