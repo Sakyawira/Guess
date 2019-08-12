@@ -34,10 +34,10 @@ export default class Header extends React.Component<IProps, IState> {
             <div className="header">
                 <Container>
                     <Row>
-                        <Col xs={6} md={6} lg={9}>
+                        <Col xs={3} md={5} lg={8}>
                             <h2><span className="red-heading2">Guess</span>The Song</h2>
                         </Col>
-                        <Col xs={6} md={6} lg={3}>
+                        <Col xs={9} md={7} lg={4}>
                             <InlineFollowButtons
                                 config={{
                                     action: "", // call to action (STRING)
@@ -51,7 +51,7 @@ export default class Header extends React.Component<IProps, IState> {
                                         'instagram',
                                         'facebook',
                                         'twitter',
-                                        'youtube',
+                                        // 'youtube',
 
                                     ],
                                     padding: 8,           // padding within buttons (INTEGER)
@@ -63,7 +63,7 @@ export default class Header extends React.Component<IProps, IState> {
                                         twitter: 'sakyawira',
 
 
-                                        youtube: '/channel/UC6eh_JZFR8O9w-de4sIjR5g?view_as=subscriber'
+                                        // youtube: '/channel/UC6eh_JZFR8O9w-de4sIjR5g?view_as=subscriber'
                                     },
                                     radius: 9,            // the corner radius on each button (INTEGER)
                                     size: 32,             // the size of each button (INTEGER)
