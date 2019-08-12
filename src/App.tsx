@@ -402,24 +402,24 @@ class App extends React.Component<{}, IState>{
                 variant="link"
                 size="sm"
                 disabled={true}>
-                <Badge pill={true} variant="success">.</Badge>
-                <span style={style}><b>{this.state.usersCountCurrent} online</b></span>
+                <Badge pill={true} variant="success">&nbsp;</Badge>
+                <span style={style}><b> &nbsp;{this.state.usersCountCurrent} online</b></span>
               </Button>
 
               <Button
                 variant="link"
                 size="sm"
                 disabled={true}>
-                <Badge pill={true} variant="warning">.</Badge>
-                <span style={style}><b>{this.state.score} points</b></span>
+                <Badge pill={true} variant="warning">&nbsp;</Badge>
+                <span style={style}><b> &nbsp;{this.state.score} points</b></span>
               </Button>
 
               <Button
                 variant="link"
                 size="sm"
                 disabled={true}>
-                <Badge pill={true} variant="danger">.</Badge>
-                <span style={style}><b>{this.state.lives} lives</b></span>
+                <Badge pill={true} variant="danger">&nbsp;</Badge>
+                <span style={style}><b> &nbsp;{this.state.lives} lives</b></span>
               </Button>
             </Col>
           </Row>
