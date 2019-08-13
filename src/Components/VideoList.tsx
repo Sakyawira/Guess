@@ -12,6 +12,7 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
 
+
 // Declare an interface that contain video List which is of type any
 interface IState{
     input:string,
@@ -183,17 +184,15 @@ class VideoList extends React.Component<IProps,IState>{
             
             <div className= {this.props.isDarkMode === true ?  "video-list-container-dark" : "video-list-container"}>
                  <Container>
-                  
-              
                 <Row>
                 <h1 className="play-heading"><span className="red-heading">video</span>List</h1>
                 <Col>
-                    
+                    {/* <div className = "video-list-text-dark"> */}
                             <TextField
                             id= "Search-Bar"
                             className = "SearchBar"
                             color = "white"
-                            placeholder="Add Video Url"
+                            placeholder= "Add Video Url"
                             margin="dense"
                             variant="outlined"
                             onChange = { (event: any ) => this.setState({input:event.target.value})}
@@ -221,11 +220,11 @@ class VideoList extends React.Component<IProps,IState>{
                                 </InputAdornment>,
                             }}
                             />
-                            
+                            {/* </div> */}
                         </Col>
                         </Row>
                         <div className={this.props.isDarkMode === true ? "video-list-dark" : "video-list"}>
-                <table className="table">
+                <table className= {this.props.isDarkMode === true ? "table-dark" : "table"}>
                     {this.state.videoList}
                 </table>
                 </div>
