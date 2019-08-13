@@ -189,7 +189,7 @@ class VideoList extends React.Component<IProps,IState>{
                 <Col>
                     {/* <div className = "video-list-text-dark"> */}
                             <TextField
-                            id= "Search-Bar"
+                            id= {this.props.isDarkMode === true ?  "Search-Bar-Dark":"Search-Bar"}
                             className = "SearchBar"
                             color = "white"
                             placeholder= "Add Video Url"
@@ -229,6 +229,7 @@ class VideoList extends React.Component<IProps,IState>{
                 </table>
                 </div>
                 </Container>
+              
                  </div>
            
         )

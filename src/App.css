@@ -15,6 +15,13 @@
 
 #Search-Bar {
     padding: 7px 10px;
+    background-color: #EAEAEA;
+}
+
+#Search-Bar-Dark {
+    padding: 7px 10px;
+    background-color: rgb(0, 0, 0);
+    color: whitesmoke;
 }
 
 .MuiFormControl-marginNormal.SearchBar {

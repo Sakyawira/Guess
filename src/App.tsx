@@ -46,7 +46,7 @@ class App extends React.Component<{}, IState>{
 
       hubConnection: new this.signalR.HubConnectionBuilder().withUrl("https://guesssongapi.azurewebsites.net/hub").build(),
       input: "",
-      isDarkMode: true,
+      isDarkMode: false,
       isLoading: false,
       lives: 3,
       player: null,
@@ -228,6 +228,12 @@ class App extends React.Component<{}, IState>{
 
     this.state.hubConnection.start().then(() => this.state.hubConnection.invoke("BroadcastMessage"));
   }
+
+  public setDarkMode = () =>{
+    const iDarkMode : boolean = this.state.isDarkMode;
+    this.setState({isDarkMode: !iDarkMode});
+  }
+
   public render() {
 
     const style = {
@@ -237,8 +243,8 @@ class App extends React.Component<{}, IState>{
     }
     return (
 
-      <div className= {this.state.isDarkMode === true ? "body-dark" : "body"}>
-        <div className= {this.state.isDarkMode === true ? "body-dark" : "body"}>
+      <div className= {this.state.isDarkMode === true ? "body-dark" : "body-light"}>
+        <div className= {this.state.isDarkMode === true ? "body-dark" : "body-light"}>
           <style dangerouslySetInnerHTML={{
             __html: `
           html, body {
@@ -399,6 +405,18 @@ class App extends React.Component<{}, IState>{
         {/* render the caption area */}
         <Container>
           <Row>
+          <Col xs={12} md={12} lg={12}>
+          <Button
+                variant="link"
+                size="sm"
+                onClick={() => this.setDarkMode()}
+                >
+                <Badge pill={true} variant="success">&nbsp;</Badge>
+                <span style={style}><b> &nbsp;{this.state.usersCountCurrent} online</b></span>
+              </Button>
+            </Col>
+          </Row>
+          <Row>
             <Col xs={12} md={12} lg={12}>
               <Button
                 variant="link"
@@ -472,6 +490,9 @@ class App extends React.Component<{}, IState>{
             </Col>
           </Row>
           <Row>
+          <h1>&nbsp;</h1>
+          </Row>
+          <Row>
             <Col xs={12} md={5} lg={7}>
 
               <ReactPlayer
@@ -481,7 +502,7 @@ class App extends React.Component<{}, IState>{
                 // a state to know what video is currently playing
                 url={this.state.playingURL}
                 width="100%"
-                height="390px"
+                height="400px"
                 playing={true}
                 config={{
                   youtube: {
@@ -521,12 +542,15 @@ class App extends React.Component<{}, IState>{
             :
             null
           }
-
+   <Row>
+          <h1>&nbsp;</h1>
+          </Row>
         </Container>
-
-        {window.scrollBy(0, window.innerHeight + 800)}
+ 
       </div>
-   
+    // <Row>
+    // <h1>&nbsp;</h1>
+    // </Row>
    )
   }
 }

@@ -292,18 +292,27 @@ export default class CaptionArea extends React.Component<IProps, IState>{
                 if (pushedID !== video.videoId && video != null) {
                     toRet.push
                         (
-                            <table className="table">
-                                <tr>
-                                    <td >
+                            
+                             <div className= {this.props.isDarkMode === false ? "table" : "table-dark"}>
+                                  <Button
+                                    variant= {this.props.isDarkMode === false ? "link" : "link"}
+                                    size="sm"
+                                    disabled= {false}
+                                    // onClick={() => this.reset()}
+                                >
+                                  {/* <tr>
+                                    <td > */}
 
                                         <td className="align-left" onClick={() => this.handleTableClick(video, caption.startTime)}><img src={video.thumbnailUrl} width="130px" alt="Thumbnail" /></td>
                                         <td className="align-right" onClick={() => this.handleTableClick(video, caption.startTime)}><b>{video.videoTitle}</b></td>
                                         {/* the title */}
                                         {/* <td className="table">{video.videoTitle}</td> */}
 
-                                    </td>
-                                </tr>
-                            </table>
+                                    {/* </td>
+                                </tr> */}
+                                </Button>
+                               
+                              </div>
                         )
                 }
                 pushedID = video.videoId;
@@ -330,9 +339,14 @@ export default class CaptionArea extends React.Component<IProps, IState>{
 
                     if (pushedID !== video.videoId && video != null) {
                         toRet.push(
-                            <table className="table">
-                                <tr>
-                                    <td >
+
+                            <div className= {this.props.isDarkMode === false ? "table" : "table-dark"}>
+                            <Button
+                              variant= {this.props.isDarkMode === false ? "link" : "link"}
+                              size="sm"
+                              disabled= {false}
+                              >
+                                
                                         <td className="align-left" onClick={() => this.handleTableClickWrong()}><img src={video.thumbnailUrl} width="130px" alt="Thumbnail" /></td>
                                         <td className="align-right" onClick={() => this.handleTableClickWrong()}><b>{video.videoTitle}</b></td>
 
@@ -340,9 +354,10 @@ export default class CaptionArea extends React.Component<IProps, IState>{
                                         {/* the title */}
                                         {/* <td className="table">{video.videoTitle}</td> */}
 
-                                    </td>
-                                </tr>
-                            </table>
+                                    {/* </td>
+                                </tr> */}
+                                </Button>
+                            </div>
                         )
                     }
 
