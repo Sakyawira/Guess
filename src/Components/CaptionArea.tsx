@@ -37,9 +37,10 @@ interface IState {
 interface IProps {
     currentVideo: any,
     iScore: any,
+    isDarkMode: any,
     iLives: any,
     play: any,
-
+ 
 }
 
 export default class CaptionArea extends React.Component<IProps, IState>{
@@ -404,7 +405,7 @@ export default class CaptionArea extends React.Component<IProps, IState>{
 
         return (
 
-            <div className="caption-area-dark">
+            <div className= {this.props.isDarkMode === true ? "caption-area-dark" : "caption-area"}>
                 {window.scrollTo(0, 0)}
                 <Container>
 

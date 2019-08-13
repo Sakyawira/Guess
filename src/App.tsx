@@ -467,7 +467,7 @@ class App extends React.Component<{}, IState>{
           <Row>
             <Col xs={12} md={12} lg={12}>
               {/* <div className="container" > */}
-              <CaptionArea iLives={this.updateLives} iScore={this.updateScore} currentVideo={this.state.playingURL} play={this.updateURL} />
+              <CaptionArea isDarkMode= {this.state.isDarkMode} iLives={this.updateLives} iScore={this.updateScore} currentVideo={this.state.playingURL} play={this.updateURL} />
               {/* <div className="row"> */}
             </Col>
           </Row>
@@ -496,7 +496,7 @@ class App extends React.Component<{}, IState>{
             <Col xs={12} md={7} lg={5}>
 
               {/* render the video list */}
-              <VideoList addVideo={this.addVideo} play={this.updateURL} mount={this.listMounted} hubConnection={this.state.hubConnection} />
+              <VideoList  isDarkMode={this.state.isDarkMode} addVideo={this.addVideo} play={this.updateURL} mount={this.listMounted} hubConnection={this.state.hubConnection} />
 
             </Col>
           </Row>

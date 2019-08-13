@@ -28,6 +28,7 @@ interface IProps{
     hubConnection:any,
     mount:any
     play:any
+    isDarkMode: any,
 }
 
 class VideoList extends React.Component<IProps,IState>{
@@ -180,7 +181,7 @@ class VideoList extends React.Component<IProps,IState>{
      
         return (
             
-            <div className="video-list">
+            <div className= {this.props.isDarkMode === true ?  "video-list-container-dark" : "video-list-container"}>
                  <Container>
                   
               
@@ -191,6 +192,7 @@ class VideoList extends React.Component<IProps,IState>{
                             <TextField
                             id= "Search-Bar"
                             className = "SearchBar"
+                            color = "white"
                             placeholder="Add Video Url"
                             margin="dense"
                             variant="outlined"
@@ -222,11 +224,14 @@ class VideoList extends React.Component<IProps,IState>{
                             
                         </Col>
                         </Row>
+                        <div className={this.props.isDarkMode === true ? "video-list-dark" : "video-list"}>
                 <table className="table">
                     {this.state.videoList}
                 </table>
+                </div>
                 </Container>
-            </div>
+                 </div>
+           
         )
     }
 }
