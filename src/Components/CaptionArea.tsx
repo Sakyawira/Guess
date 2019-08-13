@@ -404,7 +404,7 @@ export default class CaptionArea extends React.Component<IProps, IState>{
 
         return (
 
-            <div className="caption-area">
+            <div className="caption-area-dark">
                 {window.scrollTo(0, 0)}
                 <Container>
 
@@ -464,16 +464,6 @@ export default class CaptionArea extends React.Component<IProps, IState>{
                             }
                         </Col>
 
-                        {/* question */}
-
-                        {/* <Alert variant={"secondary"} > */}
-
-                        {/* </Alert> */}
-
-
-                        {/* <tbody className="lyric-heading"> */}
-
-                        {/* </tbody> */}
                     </Row>
 
                     <Row>

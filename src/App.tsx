@@ -25,6 +25,7 @@ interface IState {
   body: any,
   hubConnection: any,
   input: string,
+  isDarkMode: any,
   isLoading: any,
   lives: any,
   player: any,
@@ -45,6 +46,7 @@ class App extends React.Component<{}, IState>{
 
       hubConnection: new this.signalR.HubConnectionBuilder().withUrl("https://guesssongapi.azurewebsites.net/hub").build(),
       input: "",
+      isDarkMode: true,
       isLoading: false,
       lives: 3,
       player: null,
@@ -235,8 +237,8 @@ class App extends React.Component<{}, IState>{
     }
     return (
 
-      <div>
-        <div>
+      <div className= {this.state.isDarkMode === true ? "body-dark" : "body"}>
+        <div className= {this.state.isDarkMode === true ? "body-dark" : "body"}>
           <style dangerouslySetInnerHTML={{
             __html: `
           html, body {
@@ -393,7 +395,7 @@ class App extends React.Component<{}, IState>{
 
         </div>
         {/* call the addVideo function */}
-        <Header addVideo={this.addVideo} />
+     <Header  addVideo={this.addVideo} isDarkMode={this.state.isDarkMode} /> 
         {/* render the caption area */}
         <Container>
           <Row>
@@ -524,7 +526,8 @@ class App extends React.Component<{}, IState>{
 
         {window.scrollBy(0, window.innerHeight + 800)}
       </div>
-    )
+   
+   )
   }
 }
 

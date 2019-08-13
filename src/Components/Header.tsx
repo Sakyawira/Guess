@@ -10,6 +10,7 @@ import { InlineFollowButtons } from 'sharethis-reactjs';
 
 interface IProps {
     addVideo: any,
+    isDarkMode: any,
 }
 
 interface IState {
@@ -31,7 +32,7 @@ export default class Header extends React.Component<IProps, IState> {
     public render() {
         return (
 
-            <div className="header">
+            <div className = { this.props.isDarkMode === true ? "header-dark" : "header"}>
                 <Container>
                     <Row>
                         <Col xs={3} md={5} lg={8}>
@@ -44,7 +45,7 @@ export default class Header extends React.Component<IProps, IState> {
                                     action_enable: true,  // show/hide call to action (true, false)
                                     action_pos: 'left', // position of call to action (left, top, right)
                                     alignment: 'right',  // alignment of buttons (left, center, right)
-                                    color: 'social',       // set the color of buttons (social, white)
+                                    color: this.props.isDarkMode === true ? 'white' : 'social', // set the color of buttons (social, white)
                                     enabled: true,        // show/hide buttons (true, false)
                                     networks: [         // which networks to include (see FOLLOW NETWORKS)
                                         'github',
