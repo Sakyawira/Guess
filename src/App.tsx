@@ -425,10 +425,12 @@ public getSavedMode() {
 
         </div>
         {/* call the addVideo function */}
-     <Header  addVideo={this.addVideo} isDarkMode={this.state.isDarkMode} /> 
+     <Header  addVideo={this.addVideo} isDarkMode={this.state.isDarkMode} setDarkMode = {this.setDarkMode}/> 
         {/* render the caption area */}
         <Container>
-          <Row>
+
+
+          {/* <Row>
           <Col xs={12} md={12} lg={12}>
           <Button
                 variant="link"
@@ -438,8 +440,11 @@ public getSavedMode() {
                 <Badge pill={true} variant="success">&nbsp;</Badge>
                 <span style={style}><b> &nbsp;{this.state.usersCountCurrent} online</b></span>
               </Button>
+
             </Col>
-          </Row>
+          </Row> */}
+
+
           <Row>
             <Col xs={12} md={12} lg={12}>
               <Button

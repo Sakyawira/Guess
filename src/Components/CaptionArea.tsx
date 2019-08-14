@@ -274,7 +274,7 @@ export default class CaptionArea extends React.Component<IProps, IState>{
                         (
                             // Push the caption into an array
                             <td className="align-left">
-                                <td>{caption.phrase}</td>
+                                <td>"{caption.phrase}"</td>
                             </td>
                         )
                 }
@@ -429,7 +429,7 @@ export default class CaptionArea extends React.Component<IProps, IState>{
                     {/* <div className="col-26 "> */}
                     <Row>
                         <Col xs={12} md={7} lg={8}>
-                            <h1 ><span className="lyric-heading">Which song contains these</span> {this.state.body}</h1>
+                            <h1 ><span className="lyric-heading">Which song contains these lyrics?</span> {this.state.body}</h1>
                             {/* <h1 ><span className="lyric-heading"></span></h1> */}
 
                         </Col>
