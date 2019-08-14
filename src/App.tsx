@@ -531,7 +531,7 @@ public getSavedMode() {
                 // a state to know what video is currently playing
                 url={this.state.playingURL}
                 width="100%"
-                height="400px"
+                height="404px"
                 playing={true}
                 config={{
                   youtube: {
