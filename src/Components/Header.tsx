@@ -39,10 +39,10 @@ export default class Header extends React.Component<IProps, IState> {
             <div className={this.props.isDarkMode === true ? "header-dark" : "header"}>
                 <Container>
                     <Row>
-                        <Col xs={2} md={3} lg={3}>
+                        <Col xs={12} md={3} lg={3}>
                             <h2><span className="red-heading2">Guess</span>The Song</h2>
                         </Col>
-                        <Col xs={1} md={2} lg={5}>
+                        <Col xs={3} md={2} lg={5}>
                         <div className="toggle-container">
                             <span style={{ color: this.props.isDarkMode ? "grey" : "orange" }}>☀︎</span>
                             <span className="toggle">

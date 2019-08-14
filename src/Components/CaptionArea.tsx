@@ -40,7 +40,7 @@ interface IProps {
     isDarkMode: any,
     iLives: any,
     play: any,
- 
+
 }
 
 export default class CaptionArea extends React.Component<IProps, IState>{
@@ -67,8 +67,8 @@ export default class CaptionArea extends React.Component<IProps, IState>{
         this.setState({ lives: 3 });
         this.props.iScore(0);
         this.props.iLives(3);
-        this.setState({question: []});
-        this.setState({body: []});
+        this.setState({ question: [] });
+        this.setState({ body: [] });
         this.setState({ isCorrect: "" });
         // this.search();
     }
@@ -292,27 +292,27 @@ export default class CaptionArea extends React.Component<IProps, IState>{
                 if (pushedID !== video.videoId && video != null) {
                     toRet.push
                         (
-                            
-                             <div className= {this.props.isDarkMode === false ? "table" : "table-dark"}>
-                                  <Button
-                                    variant= {this.props.isDarkMode === false ? "link" : "link"}
+
+                            <div className={this.props.isDarkMode === false ? "table" : "table-dark"}>
+                                <Button
+                                    variant={this.props.isDarkMode === false ? "link" : "link"}
                                     size="sm"
-                                    disabled= {false}
-                                    // onClick={() => this.reset()}
+                                    disabled={false}
+                                // onClick={() => this.reset()}
                                 >
-                                  {/* <tr>
+                                    {/* <tr>
                                     <td > */}
 
-                                        <td className="align-left" onClick={() => this.handleTableClick(video, caption.startTime)}><img src={video.thumbnailUrl} width="130px" alt="Thumbnail" /></td>
-                                        <td className="align-right" onClick={() => this.handleTableClick(video, caption.startTime)}><b>{video.videoTitle}</b></td>
-                                        {/* the title */}
-                                        {/* <td className="table">{video.videoTitle}</td> */}
+                                    <td className="align-left" onClick={() => this.handleTableClick(video, caption.startTime)}><img src={video.thumbnailUrl} width="130px" alt="Thumbnail" /></td>
+                                    <td className="align-right" onClick={() => this.handleTableClick(video, caption.startTime)}><b>{video.videoTitle}</b></td>
+                                    {/* the title */}
+                                    {/* <td className="table">{video.videoTitle}</td> */}
 
                                     {/* </td>
                                 </tr> */}
                                 </Button>
-                               
-                              </div>
+
+                            </div>
                         )
                 }
                 pushedID = video.videoId;
@@ -340,19 +340,19 @@ export default class CaptionArea extends React.Component<IProps, IState>{
                     if (pushedID !== video.videoId && video != null) {
                         toRet.push(
 
-                            <div className= {this.props.isDarkMode === false ? "table" : "table-dark"}>
-                            <Button
-                              variant= {this.props.isDarkMode === false ? "link" : "link"}
-                              size="sm"
-                              disabled= {false}
-                              >
-                                
-                                        <td className="align-left" onClick={() => this.handleTableClickWrong()}><img src={video.thumbnailUrl} width="130px" alt="Thumbnail" /></td>
-                                        <td className="align-right" onClick={() => this.handleTableClickWrong()}><b>{video.videoTitle}</b></td>
+                            <div className={this.props.isDarkMode === false ? "table" : "table-dark"}>
+                                <Button
+                                    variant={this.props.isDarkMode === false ? "link" : "link"}
+                                    size="sm"
+                                    disabled={false}
+                                >
+
+                                    <td className="align-left" onClick={() => this.handleTableClickWrong()}><img src={video.thumbnailUrl} width="130px" alt="Thumbnail" /></td>
+                                    <td className="align-right" onClick={() => this.handleTableClickWrong()}><b>{video.videoTitle}</b></td>
 
 
-                                        {/* the title */}
-                                        {/* <td className="table">{video.videoTitle}</td> */}
+                                    {/* the title */}
+                                    {/* <td className="table">{video.videoTitle}</td> */}
 
                                     {/* </td>
                                 </tr> */}
@@ -420,7 +420,7 @@ export default class CaptionArea extends React.Component<IProps, IState>{
 
         return (
 
-            <div className= {this.props.isDarkMode === true ? "caption-area-dark" : "caption-area"}>
+            <div className={this.props.isDarkMode === true ? "caption-area-dark" : "caption-area"}>
                 {window.scrollTo(0, 0)}
                 <Container>
 
@@ -428,17 +428,17 @@ export default class CaptionArea extends React.Component<IProps, IState>{
                     {/* <div className="row"> */}
                     {/* <div className="col-26 "> */}
                     <Row>
-                        <Col xs={12} md={7} lg={8}>
-                            <h1 ><span className="lyric-heading">Which song contains these lyrics?</span> {this.state.body}</h1>
+                        <Col xs={12} md={8} lg={8}>
+                            <h1 ><span className="lyric-heading">Which song contains these lyrics?</span></h1>
                             {/* <h1 ><span className="lyric-heading"></span></h1> */}
 
                         </Col>
 
-                        <Col xs={12} md={7} lg={2}>
+                        <Col xs={12} md={2} lg={2}>
                             {this.state.isCorrect}
                             {/* <h1 ><span className="lyric-heading"></span></h1> */}
                         </Col>
-                        <Col xs={12} md={5} lg={2}>
+                        <Col xs={12} md={2} lg={2}>
                             {this.state.lives === 0 ?
                                 <Button
                                     variant="warning"
@@ -481,7 +481,11 @@ export default class CaptionArea extends React.Component<IProps, IState>{
                         </Col>
 
                     </Row>
-
+                    <Row>
+                        <Col xs={12} md={7} lg={8}>
+                            <h1 ><span className={this.props.isDarkMode === true ? "hWhite" : ""}>{this.state.body}</span></h1>
+                        </Col>
+                    </Row>
                     <Row>
                         {/* make a table */}
                         {/* <table className="table"> */}

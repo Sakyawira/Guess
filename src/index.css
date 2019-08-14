@@ -40,7 +40,16 @@ h1 {
   font-weight: 600;
   color: #6D6D6D;
   float: left;
-  padding-top: 0px;
+  padding-top: 5px;
+}
+
+.hWhite
+{
+  font-size: 28px;
+  font-weight: 600;
+  color: rgb(228, 228, 228);
+  float: left;
+  padding-top: 5px;
 }
 
 .red-heading {
@@ -55,6 +64,7 @@ h2 {
   color: #6D6D6D;
   float: left;
   padding: 1px;
+  padding-right: 0px;
 }
 
 .red-heading2 {
@@ -235,7 +245,7 @@ input[type="checkbox"].checkbox + label {
 
 .toggle-container {
   display: flex;
-  margin-left: -65px;
+  margin-left: 0 px;
 }
 
 .toggle-container > span {
@@ -245,7 +255,7 @@ input[type="checkbox"].checkbox + label {
   cursor: pointer;
   transition: color 0.3s ease;
   margin-top: 4px;
-  margin-right: 2px;
+  margin-right: 3px;
 }
 
 .toggle-container > span:last-child {

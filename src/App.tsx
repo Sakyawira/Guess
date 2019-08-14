@@ -571,9 +571,15 @@ public getSavedMode() {
             :
             null
           }
-   <Row>
+          <Row>
           <h1>&nbsp;</h1>
           </Row>
+          <Row>
+          <h1>&nbsp;</h1>
+          </Row>
+          <Row>
+          <h1>&nbsp;</h1>
+          </Row>    
         </Container>
  
       </div>
