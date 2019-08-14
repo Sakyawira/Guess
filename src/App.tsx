@@ -46,7 +46,7 @@ class App extends React.Component<{}, IState>{
 
       hubConnection: new this.signalR.HubConnectionBuilder().withUrl("https://guesssongapi.azurewebsites.net/hub").build(),
       input: "",
-      isDarkMode: false,
+      isDarkMode: this.getSavedMode(),
       isLoading: false,
       lives: 3,
       player: null,
@@ -232,7 +232,31 @@ class App extends React.Component<{}, IState>{
   public setDarkMode = () =>{
     const iDarkMode : boolean = this.state.isDarkMode;
     this.setState({isDarkMode: !iDarkMode});
+   
+      localStorage.setItem("isDark", JSON.stringify(!iDarkMode));
+  
   }
+public getSavedMode() {
+  const isUser : any= "isDark" in localStorage;
+  let savedMode : string;
+  const savedJson : any = localStorage.getItem("isDark");
+   savedMode =  savedJson !== null ? JSON.parse(savedJson) : '{}';
+  // const userPrefersDark = getPrefColorScheme();
+  // if mode was saved --> dark / light
+  if (isUser) {
+    return savedMode;
+    // if preferred color scheme is dark --> dark
+  } 
+  // else if (userPrefersDark) {
+  //   return true;
+  //   // otherwise --> light
+  // } 
+  else {
+    return false;
+  }
+  // return savedMode || false;
+}
+  
 
   public render() {
 
