@@ -188,7 +188,7 @@ export default class CaptionArea extends React.Component<IProps, IState>{
 
             //   this.props.iScore(this.state.score);
 
-            this.setState({ scrollY: 650 });
+            this.setState({ scrollY: 130 });
 
             this.setState({ isNewQuest: false });
 
