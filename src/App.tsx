@@ -19,6 +19,7 @@ interface IState {
   body: any,
   hubConnection: any,
   input: string,
+  isBoardHidden: any,
   isDarkMode: any,
   isLoading: any,
   lives: any,
@@ -40,6 +41,7 @@ class App extends React.Component<{}, IState>{
 
       hubConnection: new this.signalR.HubConnectionBuilder().withUrl("https://guesssongapi.azurewebsites.net/hub").build(),
       input: "",
+      isBoardHidden: true,
       isDarkMode: this.getSavedMode(),
       isLoading: false,
       lives: 3,
@@ -135,7 +137,7 @@ class App extends React.Component<{}, IState>{
 
       // call the updateVideoList which calls the updateVideo function in VideoList.tsx
     }).then(() => {
-      this.printBoard();
+      this.leaderBoardSwitch();
     }).then(() => { this.state.hubConnection.invoke("AddVideo") });
   }
 
@@ -187,7 +189,7 @@ class App extends React.Component<{}, IState>{
 
     this.state.hubConnection.start().then(() => this.state.hubConnection.invoke("BroadcastMessage"));
   }
-
+  // Set a mode and save that mode to the local storage
   public setDarkMode = () => {
     const iDarkMode: boolean = this.state.isDarkMode;
     this.setState({ isDarkMode: !iDarkMode });
@@ -195,6 +197,7 @@ class App extends React.Component<{}, IState>{
     localStorage.setItem("isDark", JSON.stringify(!iDarkMode));
 
   }
+  // Get the saved mode from local storage
   public getSavedMode() {
     const isUser: any = "isDark" in localStorage;
     let savedMode: string;
@@ -209,6 +212,12 @@ class App extends React.Component<{}, IState>{
     }
   }
 
+  // Hide / Unhide LeaderBoards
+  public leaderBoardSwitch = () => {
+    const iBoardHidden: boolean = this.state.isBoardHidden;
+    this.setState({ isBoardHidden: !iBoardHidden });
+    this.printBoard();
+  }
 
   public render() {
 
@@ -266,14 +275,6 @@ class App extends React.Component<{}, IState>{
               size: 48,             // the size of each button (INTEGER)
               top: 260,             // offset in pixels from the top of the page
 
-              // // OPTIONAL PARAMETERS
-              // url: 'https://www.sharethis.com', // (defaults to current url)
-              // image: 'https://bit.ly/2CMhCMC',  // (defaults to og:image or twitter:image)
-              // description: 'custom text',       // (defaults to og:description or twitter:description)
-              // title: 'custom title',            // (defaults to og:title or twitter:title)
-              // message: 'custom email text',     // (only for email sharing)
-              // subject: 'custom email subject',  // (only for email sharing)
-              // username: 'custom twitter handle' // (only for twitter sharing)
 
             }}
           />
@@ -386,26 +387,53 @@ class App extends React.Component<{}, IState>{
             </Col>
           </Row>
 
-          {this.state.lives === 0 ?
-            <Row>
+          <Row>
+            <h1>&nbsp;</h1>
+          </Row>
+
+          <Row>
+         
+          {/* </Row>
+
+        
+            <Row> */}
+            {/* <Col xs={12} md={1} lg={1}>
+          
+          </Col> */}
               <Col xs={12} md={12} lg={12}>
                 <table className={this.state.isDarkMode === true ? "table dark" : "table"} >
                   <tr className="lyric-heading">
-                    <th>Player Name</th>
-                    <th>Score</th>
+                  
+                    <th> <Button
+                      variant={this.state.isBoardHidden === true ? "link" : "link"}
+                      size="sm"
+                      disabled={this.state.isLoading}
+                      onClick={() => this.leaderBoardSwitch()}  >
+                      {this.state.isBoardHidden === true ? 'V' : '^'}
+                    </Button>Player Name</th>
+                    <th><Button
+                      variant={this.state.isBoardHidden === true ? "link" : "link"}
+                      size="sm"
+                      disabled={this.state.isLoading}
+                      onClick={() => this.leaderBoardSwitch()}  >
+                      {this.state.isBoardHidden === true ? 'V' : '^'}
+                    </Button>Score</th>
+
 
                   </tr>
 
                   <tbody>
-                    {this.state.body}
+                  {this.state.isBoardHidden === false ?
+                    this.state.body
+                    :
+                    null
+                  }
                   </tbody>
                 </table>
 
               </Col>
             </Row>
-            :
-            null
-          }
+           
           <Row>
             <h1>&nbsp;</h1>
           </Row>

@@ -144,7 +144,6 @@ export default class QuestionArea extends React.Component<IProps, IState>{
         // play video at the specific time
         if (this.state.isNewQuest === true && this.state.lives !== 0) {
             this.props.play(video.webUrl + "&t=" + timedURL + "s")
-            // window.scrollTo(0,0);
 
             this.setState({
                 isCorrect:
@@ -182,8 +181,6 @@ export default class QuestionArea extends React.Component<IProps, IState>{
     }
 
     public handleWrongAnswer = () => {
-        // scroll the window to the top
-        //  window.scrollTo(0,0);
         if (this.state.isNewQuest === true && this.state.lives !== 0) {
             this.setState({ isNewQuest: false });
 
@@ -352,19 +349,17 @@ export default class QuestionArea extends React.Component<IProps, IState>{
         return (
 
             <div className={this.props.isDarkMode === true ? "caption-area-dark" : "caption-area"}>
-                {window.scrollTo(0, 0)}
                 <Container>
 
                     <Row>
                         <Col xs={12} md={8} lg={8}>
                             <h1 ><span className="lyric-heading">Which song contains these lyrics?</span></h1>
-                            {/* <h1 ><span className="lyric-heading"></span></h1> */}
 
                         </Col>
 
                         <Col xs={12} md={2} lg={2}>
                             {this.state.isCorrect}
-                            {/* <h1 ><span className="lyric-heading"></span></h1> */}
+
                         </Col>
                         <Col xs={12} md={2} lg={2}>
                             {this.state.lives === 0 ?
@@ -436,7 +431,7 @@ export default class QuestionArea extends React.Component<IProps, IState>{
                             {/* feedback */}
 
                         </Col>
-                        {window.scrollBy(0, this.state.scrollY)}
+                        {window.scrollTo(0, this.state.scrollY)}
                     </Row>
 
 
