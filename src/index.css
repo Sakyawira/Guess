@@ -76,13 +76,17 @@ h2 {
 .lyric-heading {
   color: #cc3333;
   font-size: 15px;
-  margin-left: 1pxl;
+  margin-left: 13pxl;
   margin-right: 1pxl;
   margin-bottom: 1pxl;
   margin-top: 1pxl;
+  float: center;
+  align-items: center;
   /* float: right; */
   /* padding: 30px; */
 }
+
+
 
 .title-heading {
   color: rgb(20, 1, 1);
@@ -100,13 +104,43 @@ h2 {
 }
 
 .table {
-  background-color: #F5F5F5;
+  /* background-color: #F5F5F5; */
   font-size: 12px;
 }
 
+.table.dark
+{
+  font-size: 12px;
+  background-color: #323234;
+}
+.table.dark td, .table.dark th {
+  background-color: #242424;
+  /* color: #cc3333; */
+  font-size: 12px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+/* .table.dark tr{
+  color: #e9e9e9;
+  font-size: 15px;
+  margin-left: 13pxl;
+  margin-right: 1pxl;
+  margin-bottom: 1pxl;
+  margin-top: 1pxl;
+  float: center;
+  align-items: center;
+  background-color: #333333;
+  /* float: right; */
+  /* padding: 30px; */ 
+.table.dark tbody
+{
+  color: whitesmoke;
+}
 
 .table-dark {
   font-size: 12px;
+  background-color: #323234;
 }
 
 .table td, .table th {
@@ -115,6 +149,8 @@ h2 {
   font-size: 12px;
   cursor: pointer;
 }
+
+
 
 .table-dark td, .table-dark th {
   background-color: #242424;
@@ -194,6 +230,11 @@ h2 {
   padding: 7px; 
   width: 260px;
   height: 39px;
+}
+
+.btn
+{
+  padding-right: 7px;
 }
 
 .textfield {

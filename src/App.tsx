@@ -476,10 +476,10 @@ public getSavedMode() {
             {this.state.lives === 0 ?
               <Col xs={12} md={12} lg={12}>
                 <TextField
-                  id="Search-Bar"
+                  id= {this.state.isDarkMode === true ?  "Search-Bar-Dark":"Search-Bar"}
                   className="SearchBar"
                   placeholder="Enter your name"
-                  margin="normal"
+                  margin="dense"
                   variant="outlined"
                   onChange={(event: any) => this.setState({ input: event.target.value })}
                   value={this.state.input}
@@ -555,13 +555,14 @@ public getSavedMode() {
           {this.state.lives === 0 ?
             <Row>
               <Col xs={12} md={12} lg={12}>
-                <table className="table">
-                  < tr className="lyric-heading">
+                <table className= {this.state.isDarkMode === true ? "table dark" : "table"} >
+                  <tr className="lyric-heading">
                     <th>Player Name</th>
                     <th>Score</th>
 
                   </tr>
-                  <tbody className="captionTable">
+                  
+                  <tbody>
                     {this.state.body}
                   </tbody>
                 </table>
@@ -583,9 +584,7 @@ public getSavedMode() {
         </Container>
  
       </div>
-    // <Row>
-    // <h1>&nbsp;</h1>
-    // </Row>
+
    )
   }
 }
