@@ -109,7 +109,11 @@ class VideoList extends React.Component<IProps,IState>{
                 const row = (<tr>
                     {/* on click, run function handleLike */}
                     {/* check if a video is favourited. If yes, return a start, else return a star border */}
-                    <td className="align-middle" onClick={() => this.handleLike(video)}>{video.isFavourite === true?<Star/>:<StarBorder/>}</td>
+                    <td className="align-middle"> 
+                    <Button
+                            variant="link"
+                            size = "sm"
+                            onClick={() => this.handleLike(video)}>{video.isFavourite === true?<Star/>:<StarBorder/>}</Button></td>
 
                     {/* on click, play video by getting the video url*/}
                     {/* render the thumbnail of the video */}
