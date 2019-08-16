@@ -1,7 +1,3 @@
-// import { IconButton } from '@material-ui/core';
-// import InputAdornment from '@material-ui/core/InputAdornment';
-// import TextField from '@material-ui/core/TextField'
-// import AddCircle from '@material-ui/icons/AddCircle'
 import * as React from 'react';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -56,9 +52,7 @@ export default class Header extends React.Component<IProps, IState> {
                                 <label htmlFor="checkbox" />
                             </span>
                             <span style={{ color: this.props.isDarkMode ? "slateblue" : "grey" }}>☾</span>
-                            {/* <button onClick={() => setDarkMode(prevMode => !prevMode)}>
-          Toggle
-        </button> */}
+
                         </div>
                         </Col>
                         <Col xs={9} md={7} lg={4}>
@@ -127,23 +121,6 @@ export default class Header extends React.Component<IProps, IState> {
                                         spacing: 8            // the spacing between buttons (INTEGER)
                                     }}
                             />
-                            {/* <hr /> */}
-                            {/* <TextField
-                            id= "Search-Bar"
-                            className = "SearchBar"
-                            placeholder="Paste Video Link"
-                            margin="normal"
-                            variant="outlined"
-                            onChange = { (event: any ) => this.setState({input:event.target.value})}
-                            value = {this.state.input}
-                            InputProps={{
-                                endAdornment: <InputAdornment position="start">
-                                    <IconButton onClick={this.addVideo}>
-                                        <AddCircle/>
-                                    </IconButton>
-                                </InputAdornment>,
-                            }}
-                            /> */}
 
                         </Col>
                     </Row>

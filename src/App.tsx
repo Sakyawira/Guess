@@ -279,103 +279,6 @@ class App extends React.Component<{}, IState>{
           }
         `}} />
 
-          {/* <h1>Inline Share Buttons</h1>
-        <InlineShareButtons
-          config={{
-            alignment: 'center',  // alignment of buttons (left, center, right)
-            color: 'social',      // set the color of buttons (social, white)
-            enabled: true,        // show/hide buttons (true, false)
-            font_size: 16,        // font size for the buttons
-            labels: 'cta',        // button labels (cta, counts, null)
-            language: 'en',       // which language to use (see LANGUAGES)
-            networks: [           // which networks to include (see SHARING NETWORKS)
-              'whatsapp',
-              'linkedin',
-              'messenger',
-              'facebook',
-              'twitter'
-            ],
-           
-           
-           
-          
- 
-            // // OPTIONAL PARAMETERS
-           
-           
-            // description: 'custom text',       // (defaults to og:description or twitter:description)
-            // image: 'https://bit.ly/2CMhCMC',  // (defaults to og:image or twitter:image)
-           
-            // message: 'custom email text',     // (only for email sharing)
-            // padding: 12,          // padding within buttons (INTEGER)
-            // radius: 4,            // the corner radius on each button (INTEGER)
-            //  show_total: true,
-            //  size: 40,             // the size of each button (INTEGER)
-            // subject: 'custom email subject',  // (only for email sharing)
-            // title: 'custom title',            // (defaults to og:title or twitter:title)
-            // username: 'custom twitter handle', // (only for twitter sharing)
-            // url: 'https://www.sharethis.com', // (defaults to current url)
-          
-          }}
-        />
-        <hr />
- 
-        <h1>Inline Reaction Buttons</h1>
-        <InlineReactionButtons
-          config={{
-            alignment: 'center',  // alignment of buttons (left, center, right)
-            enabled: true,        // show/hide buttons (true, false)
-            language: 'en',       // which language to use (see LANGUAGES)
-            min_count: 0,         // hide react counts less than min_count (INTEGER)
-            padding: 12,          // padding within buttons (INTEGER)
-            reactions: [          // which reactions to include (see REACTIONS)
-              'slight_smile',
-              'heart_eyes',
-              'laughing',
-              'astonished',
-              'sob',
-              'rage'
-            ],
-            size: 48,             // the size of each button (INTEGER)
-            spacing: 8,           // the spacing between buttons (INTEGER)
- 
-            // OPTIONAL PARAMETERS
-            url: 'https://www.sharethis.com' // (defaults to current url)
-          }}
-        />
-        <hr />
- 
-        <h1>Inline Follow Buttons</h1>
-        <InlineFollowButtons
-          config={{
-            action: 'Follow us:', // call to action (STRING)
-            action_enable: true,  // show/hide call to action (true, false)
-            action_pos: 'bottom', // position of call to action (left, top, right)
-            alignment: 'center',  // alignment of buttons (left, center, right)
-            color: 'white',       // set the color of buttons (social, white)
-            enabled: true,        // show/hide buttons (true, false)
-            networks: [           // which networks to include (see FOLLOW NETWORKS)
-              'twitter',
-              'facebook',
-              'instagram',
-              'youtube'
-            ],
-            padding: 8,           // padding within buttons (INTEGER)
-            profiles: {           // social profile links for buttons
-              facebook: 'sakyawira.nandaruslim?ref=bookmarks',
-              instagram: 'sakyawira',
-              twitter: 'sakyawira',
-             
-             
-              youtube: '/channel/UC6eh_JZFR8O9w-de4sIjR5g?view_as=subscriber'
-            },
-            radius: 9,            // the corner radius on each button (INTEGER)
-            size: 32,             // the size of each button (INTEGER)
-            spacing: 8            // the spacing between buttons (INTEGER)
-          }}
-        />
-        <hr /> */}
-
           <StickyShareButtons
             config={{
               alignment: 'left',    // alignment of buttons (left, right)
@@ -420,22 +323,6 @@ class App extends React.Component<{}, IState>{
         <Header addVideo={this.addVideo} isDarkMode={this.state.isDarkMode} setDarkMode={this.setDarkMode} />
         {/* render the caption area */}
         <Container>
-
-
-          {/* <Row>
-          <Col xs={12} md={12} lg={12}>
-          <Button
-                variant="link"
-                size="sm"
-                onClick={() => this.setDarkMode()}
-                >
-                <Badge pill={true} variant="success">&nbsp;</Badge>
-                <span style={style}><b> &nbsp;{this.state.usersCountCurrent} online</b></span>
-              </Button>
-
-            </Col>
-          </Row> */}
-
 
           <Row>
             <Col xs={12} md={12} lg={12}>
@@ -500,14 +387,10 @@ class App extends React.Component<{}, IState>{
               : null}
           </Row>
         </Container>
-        {/* <div className="col-26"> */}
         <Container>
-          {/* Stack the columns on mobile by making one full-width and the other half-width */}
           <Row>
             <Col xs={12} md={12} lg={12}>
-              {/* <div className="container" > */}
               <QuestionArea isDarkMode={this.state.isDarkMode} iLives={this.updateLives} iScore={this.updateScore} currentVideo={this.state.playingURL} play={this.updateURL} />
-              {/* <div className="row"> */}
             </Col>
           </Row>
           <Row>
@@ -542,8 +425,7 @@ class App extends React.Component<{}, IState>{
 
             </Col>
           </Row>
-          {/*     
-        </Col> */}
+
           {this.state.lives === 0 ?
             <Row>
               <Col xs={12} md={12} lg={12}>

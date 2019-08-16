@@ -1,21 +1,9 @@
 import Button from 'react-bootstrap/Button'
-// import Alert from 'react-bootstrap/Alert'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-// import { IconButton } from '@material-ui/core';
-// import InputAdornment from '@material-ui/core/InputAdornment';
-// import TextField from '@material-ui/core/TextField'
-// import Search from '@material-ui/icons/Search'
 import Spinner from 'react-bootstrap/Spinner'
 import * as React from 'react'
-
-
-// import shuffle from 'shuffle.ts';
-// import { string } from 'prop-types';
-// import VideoList from './VideoList';
-
-// const videolist = new VideoList(this);
 
 interface IState {
     input: string,
@@ -30,8 +18,6 @@ interface IState {
     body: any,
     question: any,
     wrongResult: any,
-
-
 }
 
 interface IProps {
@@ -40,7 +26,6 @@ interface IProps {
     isDarkMode: any,
     iLives: any,
     play: any,
-
 }
 
 export default class QuestionArea extends React.Component<IProps, IState>{
@@ -70,20 +55,17 @@ export default class QuestionArea extends React.Component<IProps, IState>{
         this.setState({ question: [] });
         this.setState({ body: [] });
         this.setState({ isCorrect: "" });
-        // this.search();
     }
 
     // make a reference that allows App.tsx to access updateList from video.tsx
     public listMounted = (callbacks: any) => {
         //   this.setState({ updateVideoList: callbacks })
     }
-    // Handle search of caption/transcription
-    public search = () => {
-        //  this.setState(state =>  ({score : state.score + 100}));
+    // Handle the creation of question
+    public GenerateQuestion = () => {
         this.props.iScore(this.state.score);
         this.props.iLives(this.state.lives);
 
-        console.log(this.state.score);
         let inumber: number = 0;
         let runnumber: number = 2;
 
@@ -94,9 +76,6 @@ export default class QuestionArea extends React.Component<IProps, IState>{
         while (inumber < runnumber) {
             this.setState({ isNewQuest: true });
             this.setState({ isLoading: true });
-            // window.scrollTo(0,0);
-
-
 
             fetch("https://guesssongapi.azurewebsites.net/api/Videos/GetRandomVideo", {
                 headers: {
@@ -139,7 +118,7 @@ export default class QuestionArea extends React.Component<IProps, IState>{
         this.setState({ scrollY: 0 });
     }
 
-    public makeLike = (video: any) => {
+    public makeFav = (video: any) => {
         // Create the object to send
         const toSend = [{
             "from": "",
@@ -159,7 +138,7 @@ export default class QuestionArea extends React.Component<IProps, IState>{
         })
     }
 
-    public handleTableClick = (video: any, timedURL: string) => {
+    public handleRightAnswer = (video: any, timedURL: string) => {
         // scroll the window to the top
 
         // play video at the specific time
@@ -174,25 +153,14 @@ export default class QuestionArea extends React.Component<IProps, IState>{
             </Button>
             });
 
-            // this.setState((state) => ({score : state.score + 100}));
-
-
-
             const n: number = this.state.score;
             this.setState({ score: n + 100 });
             this.props.iScore(n + 100);
-
-            //  this.forceUpdate();
-            // this.search();
-            console.log(this.state.score);
-
-            //   this.props.iScore(this.state.score);
 
             this.setState({ scrollY: 78 });
 
             this.setState({ isNewQuest: false });
 
-            // this.search();
         }
         else if (this.state.lives === 0) {
             this.setState({
@@ -211,10 +179,9 @@ export default class QuestionArea extends React.Component<IProps, IState>{
             });
             this.setState({ scrollY: 0 });
         }
-        //  window.scrollTo(0,1080);
     }
 
-    public handleTableClickWrong = () => {
+    public handleWrongAnswer = () => {
         // scroll the window to the top
         //  window.scrollTo(0,0);
         if (this.state.isNewQuest === true && this.state.lives !== 0) {
@@ -297,19 +264,11 @@ export default class QuestionArea extends React.Component<IProps, IState>{
                                 <Button
                                     variant={this.props.isDarkMode === false ? "link" : "link"}
                                     size="sm"
-                                    disabled={false}
-                                // onClick={() => this.reset()}
-                                >
-                                    {/* <tr>
-                                    <td > */}
-
-                                    <td className="align-left" onClick={() => this.handleTableClick(video, caption.startTime)}><img src={video.thumbnailUrl} width="130px" alt="Thumbnail" /></td>
-                                    <td className="align-right" onClick={() => this.handleTableClick(video, caption.startTime)}><b>{video.videoTitle}</b></td>
-                                    {/* the title */}
-                                    {/* <td className="table">{video.videoTitle}</td> */}
-
-                                    {/* </td>
-                                </tr> */}
+                                    disabled={false}>
+                                        
+                                    <td className="align-left" onClick={() => this.handleRightAnswer(video, caption.startTime)}><img src={video.thumbnailUrl} width="130px" alt="Thumbnail" /></td>
+                                    <td className="align-right" onClick={() => this.handleRightAnswer(video, caption.startTime)}><b>{video.videoTitle}</b></td>
+            
                                 </Button>
 
                             </div>
@@ -321,8 +280,8 @@ export default class QuestionArea extends React.Component<IProps, IState>{
             })
         });
 
-        // declare and set the currentID to the questionID
-        let currentId: any = 0; // questionId;
+        // declare and set the currentID to 0
+        let currentId: any = 0;
 
         console.log(toRet);
         // runs up to here
@@ -347,15 +306,9 @@ export default class QuestionArea extends React.Component<IProps, IState>{
                                     disabled={false}
                                 >
 
-                                    <td className="align-left" onClick={() => this.handleTableClickWrong()}><img src={video.thumbnailUrl} width="130px" alt="Thumbnail" /></td>
-                                    <td className="align-right" onClick={() => this.handleTableClickWrong()}><b>{video.videoTitle}</b></td>
+                                    <td className="align-left" onClick={() => this.handleWrongAnswer()}><img src={video.thumbnailUrl} width="130px" alt="Thumbnail" /></td>
+                                    <td className="align-right" onClick={() => this.handleWrongAnswer()}><b>{video.videoTitle}</b></td>
 
-
-                                    {/* the title */}
-                                    {/* <td className="table">{video.videoTitle}</td> */}
-
-                                    {/* </td>
-                                </tr> */}
                                 </Button>
                             </div>
                         )
@@ -365,39 +318,17 @@ export default class QuestionArea extends React.Component<IProps, IState>{
                 })
             }
         });
-        // });
 
         // if the length of the table row is 0
-        if (toRet.length === 1) {
+        if (toRet.length === 1) 
+        {
             // if the input was empty
-            // if(this.state.input.trim() === "")
-            // {
-            //     const errorCase = <div><p>Sorry you need to still search</p></div>
-            //     // make body into error case
-            //     this.setState({body:errorCase})
-            // }
-            // else
-            // {
-            //     const errorCase = <div><p>Sorry no results were returned for "{this.state.input}"</p></div>
-            //      // make body into error case
-            //     this.setState({body:errorCase})
-            // } 
-            // this.makeTableBody();
-            // console.log(toRet);
         }
         else {
-            // let rng = Math.floor(Math.random() * 2) + 1;  
-            // make body into the table row
-            // if (rn)
-            // Used like so
-            // var arr = [2, 11, 37, 42];
             this.shuffleInPlace(toRet);
             console.log(toRet);
-            // console.log(arr);
             this.setState({ body: toRet2 })
             this.setState({ question: toRet })
-
-            //  this.setState({question: ourQ});
         }
         if (this.state.isFirst === false) {
             this.setState({ isLoading: false });
@@ -460,7 +391,7 @@ export default class QuestionArea extends React.Component<IProps, IState>{
                                     variant="danger"
                                     size="sm"
                                     disabled={this.state.isLoading}
-                                    onClick={() => this.search()}
+                                    onClick={() => this.GenerateQuestion()}
                                 >
                                     {this.state.isLoading ? 'Loading…' : 'Get new question'}
                                     {this.state.isLoading ?
