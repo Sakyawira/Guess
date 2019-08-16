@@ -1,23 +1,22 @@
 import * as React from 'react';
 import ReactPlayer from 'react-player';
-// import {InlineReactionButtons} from 'sharethis-reactjs';
-// import {InlineShareButtons} from 'sharethis-reactjs';
+
 import { StickyShareButtons } from 'sharethis-reactjs';
 
-import CaptionArea from 'src/Components/CaptionArea';
+import QuestionArea from 'src/Components/QuestionArea';
 import Header from 'src/Components/Header';
 import VideoList from 'src/Components/VideoList';
 import 'src/App.css'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-// import Icon from '@material-ui/core/Icon';
+
 
 import Badge from 'react-bootstrap/Badge'
 import Button from 'react-bootstrap/Button'
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
-// import IconButton from '@material-ui/core/IconButton';
+
 import Spinner from 'react-bootstrap/Spinner';
 
 interface IState {
@@ -229,34 +228,27 @@ class App extends React.Component<{}, IState>{
     this.state.hubConnection.start().then(() => this.state.hubConnection.invoke("BroadcastMessage"));
   }
 
-  public setDarkMode = () =>{
-    const iDarkMode : boolean = this.state.isDarkMode;
-    this.setState({isDarkMode: !iDarkMode});
-   
-      localStorage.setItem("isDark", JSON.stringify(!iDarkMode));
-  
+  public setDarkMode = () => {
+    const iDarkMode: boolean = this.state.isDarkMode;
+    this.setState({ isDarkMode: !iDarkMode });
+
+    localStorage.setItem("isDark", JSON.stringify(!iDarkMode));
+
   }
-public getSavedMode() {
-  const isUser : any= "isDark" in localStorage;
-  let savedMode : string;
-  const savedJson : any = localStorage.getItem("isDark");
-   savedMode =  savedJson !== null ? JSON.parse(savedJson) : '{}';
-  // const userPrefersDark = getPrefColorScheme();
-  // if mode was saved --> dark / light
-  if (isUser) {
-    return savedMode;
-    // if preferred color scheme is dark --> dark
-  } 
-  // else if (userPrefersDark) {
-  //   return true;
-  //   // otherwise --> light
-  // } 
-  else {
-    return false;
+  public getSavedMode() {
+    const isUser: any = "isDark" in localStorage;
+    let savedMode: string;
+    const savedJson: any = localStorage.getItem("isDark");
+    savedMode = savedJson !== null ? JSON.parse(savedJson) : '{}';
+
+    if (isUser) {
+      return savedMode;
+    }
+    else {
+      return false;
+    }
   }
-  // return savedMode || false;
-}
-  
+
 
   public render() {
 
@@ -267,8 +259,8 @@ public getSavedMode() {
     }
     return (
 
-      <div className= {this.state.isDarkMode === true ? "body-dark" : "body-light"}>
-        <div className= {this.state.isDarkMode === true ? "body-dark" : "body-light"}>
+      <div className={this.state.isDarkMode === true ? "body-dark" : "body-light"}>
+        <div className={this.state.isDarkMode === true ? "body-dark" : "body-light"}>
           <style dangerouslySetInnerHTML={{
             __html: `
           html, body {
@@ -425,7 +417,7 @@ public getSavedMode() {
 
         </div>
         {/* call the addVideo function */}
-     <Header  addVideo={this.addVideo} isDarkMode={this.state.isDarkMode} setDarkMode = {this.setDarkMode}/> 
+        <Header addVideo={this.addVideo} isDarkMode={this.state.isDarkMode} setDarkMode={this.setDarkMode} />
         {/* render the caption area */}
         <Container>
 
@@ -476,7 +468,7 @@ public getSavedMode() {
             {this.state.lives === 0 ?
               <Col xs={12} md={12} lg={12}>
                 <TextField
-                  id= {this.state.isDarkMode === true ?  "Search-Bar-Dark":"Search-Bar"}
+                  id={this.state.isDarkMode === true ? "Search-Bar-Dark" : "Search-Bar"}
                   className="SearchBar"
                   placeholder="Enter your name"
                   margin="dense"
@@ -514,12 +506,12 @@ public getSavedMode() {
           <Row>
             <Col xs={12} md={12} lg={12}>
               {/* <div className="container" > */}
-              <CaptionArea isDarkMode= {this.state.isDarkMode} iLives={this.updateLives} iScore={this.updateScore} currentVideo={this.state.playingURL} play={this.updateURL} />
+              <QuestionArea isDarkMode={this.state.isDarkMode} iLives={this.updateLives} iScore={this.updateScore} currentVideo={this.state.playingURL} play={this.updateURL} />
               {/* <div className="row"> */}
             </Col>
           </Row>
           <Row>
-          <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
           </Row>
           <Row>
             <Col xs={12} md={5} lg={7}>
@@ -546,7 +538,7 @@ public getSavedMode() {
             <Col xs={12} md={7} lg={5}>
 
               {/* render the video list */}
-              <VideoList  isDarkMode={this.state.isDarkMode} addVideo={this.addVideo} play={this.updateURL} mount={this.listMounted} hubConnection={this.state.hubConnection} />
+              <VideoList isDarkMode={this.state.isDarkMode} addVideo={this.addVideo} play={this.updateURL} mount={this.listMounted} hubConnection={this.state.hubConnection} />
 
             </Col>
           </Row>
@@ -555,13 +547,13 @@ public getSavedMode() {
           {this.state.lives === 0 ?
             <Row>
               <Col xs={12} md={12} lg={12}>
-                <table className= {this.state.isDarkMode === true ? "table dark" : "table"} >
+                <table className={this.state.isDarkMode === true ? "table dark" : "table"} >
                   <tr className="lyric-heading">
                     <th>Player Name</th>
                     <th>Score</th>
 
                   </tr>
-                  
+
                   <tbody>
                     {this.state.body}
                   </tbody>
@@ -573,19 +565,19 @@ public getSavedMode() {
             null
           }
           <Row>
-          <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
           </Row>
           <Row>
-          <h1>&nbsp;</h1>
+            <h1>&nbsp;</h1>
           </Row>
           <Row>
-          <h1>&nbsp;</h1>
-          </Row>    
+            <h1>&nbsp;</h1>
+          </Row>
         </Container>
- 
+
       </div>
 
-   )
+    )
   }
 }
 

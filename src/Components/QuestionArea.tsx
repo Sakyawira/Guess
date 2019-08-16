@@ -43,7 +43,7 @@ interface IProps {
 
 }
 
-export default class CaptionArea extends React.Component<IProps, IState>{
+export default class QuestionArea extends React.Component<IProps, IState>{
     public constructor(props: any) {
         super(props);
         this.state = {

@@ -234,7 +234,9 @@ h2 {
 
 .btn
 {
-  padding-right: 7px;
+  padding-top: 5px;
+  margin-bottom: 3px;
+  margin-top: 3px;
 }
 
 .textfield {
