@@ -106,6 +106,7 @@ class VideoList extends React.Component<IProps,IState>{
             // If succesful then 
         }).then((result:any) => {
             const output:any[] = []
+            const istore:any[] = []
 
             // for each video that we get, we map it into a table row
             result.forEach((video:any) => {
@@ -136,14 +137,21 @@ class VideoList extends React.Component<IProps,IState>{
                                 aria-hidden="true"
                                 /> : <Close/>} </Button></td>
                 </tr>)
-                // If a video is favourited, put on the top, else push to the back
-                if(video.isFavourite){
+                // If a video is favourited, put on the top, else push to the top
+                if(!video.isFavourite){
                     output.unshift(row);
-                }else{
-                    output.push(row);
+                }
+                // Store favourited videos to a temp storage
+                else{
+                    istore.unshift(row);
                 }
                 console.log(row);
             });
+            // Push the favourited video on top of the rest of the videos
+            for (const item of istore)
+            {
+                output.unshift(item);
+            }
             // Set this to the output
             this.setState({videoList:output})
             this.setState({isLoading: false}); 

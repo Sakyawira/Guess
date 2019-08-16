@@ -1,8 +1,6 @@
 import * as React from 'react';
 import ReactPlayer from 'react-player';
-
 import { StickyShareButtons } from 'sharethis-reactjs';
-
 import QuestionArea from 'src/Components/QuestionArea';
 import Header from 'src/Components/Header';
 import VideoList from 'src/Components/VideoList';
@@ -10,13 +8,10 @@ import 'src/App.css'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-
-
 import Badge from 'react-bootstrap/Badge'
 import Button from 'react-bootstrap/Button'
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
-
 import Spinner from 'react-bootstrap/Spinner';
 
 interface IState {
@@ -58,6 +53,7 @@ class App extends React.Component<{}, IState>{
     }
   }
 
+  // A function to print the LeaderBoard
   public printBoard = () => {
     fetch('https://guesssongapi.azurewebsites.net/api/LeaderBoards', {
       method: 'GET'
@@ -69,9 +65,8 @@ class App extends React.Component<{}, IState>{
       // If succesful then 
     }).then((result: any) => {
       const output: any[] = []
-      console.log(result);
-      // for each Player that we get, we sort it so the one with highest score is at top
 
+      // for each Player that we get, we sort it so the one with highest score is at top
       result.sort((a: any, b: any) => {
         if (a.score > b.score) {
           return -1;
@@ -84,20 +79,13 @@ class App extends React.Component<{}, IState>{
 
       result.forEach((player: any) => {
         const row = (<tr>
-          {/* on click, run function handleLike */}
-          {/* check if a video is favourited. If yes, return a start, else return a star border */}
           <td className="align-middle" >{player.playerName}</td>
           <td className="align-middle" >{player.score}</td>
-
         </tr>)
-        // If a video is favourited, put on the top, else push to the back
-
 
         output.push(row);
         console.log(row);
-
       });
-
       // Set this to the output
       this.setState({ body: output });
       this.setState({ isLoading: false });
@@ -105,42 +93,13 @@ class App extends React.Component<{}, IState>{
     })
   }
 
-  public makeTableBody = () => {
-    const toRet: any[] = [];
-    this.state.result.sort((a: any, b: any) => {
-
-      return a.Score.localeCompare(b.Score);
-
-    })
-    console.log(this.state.result);
-    this.state.result.forEach(() => {
-      //  console.log(this.state.result);
-      toRet.push(
-        <tr >
-          <td>{this.state.result.playerName}</td>
-          <td>{this.state.result.Score}</td>
-        </tr>)
-    });
-    if (toRet.length === 0) {
-      if (this.state.input.trim() === "") {
-        const errorCase = <div><p>Sorry you need to still search</p></div>
-        this.setState({ body: errorCase })
-      } else {
-        const errorCase = <div><p>Sorry no results were returned for "{this.state.input}"</p></div>
-        this.setState({ body: errorCase })
-      }
-    }
-    else {
-      this.setState({ body: toRet })
-    }
-  }
-
+  // A function that will make the 'player' state to refer to the passed in parameter
   public setRef = (playerRef: any) => {
     this.setState({
       player: playerRef
     })
   }
-
+  // A function to add the video, which accepts a string called url
   public addVideo = (url: string) => {
     const body = { "url": url }
     fetch("https://guesssongapi.azurewebsites.net/api/Videos", {
@@ -155,15 +114,15 @@ class App extends React.Component<{}, IState>{
     }).then(() => { this.state.hubConnection.invoke("VideoAdded") });
   }
 
-  // a function to add the video, which accepts a string called url
+  // A function to add the video, which accepts a string called url
   public addPlayer = (name: string) => {
     this.setState({ isLoading: true });
 
     const body = { "playerName": name, "score": this.state.score }
 
     fetch("https://guesssongapi.azurewebsites.net/api/LeaderBoards", {
-      //  fetch("https://guesssongapi.azurewebsites.net/api/Videos", {
-      // convert body to a string and put it into a json file
+
+      // convert body to a string
       body: JSON.stringify(body),
 
       headers: {
