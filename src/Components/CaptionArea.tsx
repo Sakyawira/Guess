@@ -188,7 +188,7 @@ export default class CaptionArea extends React.Component<IProps, IState>{
 
             //   this.props.iScore(this.state.score);
 
-            this.setState({ scrollY: 130 });
+            this.setState({ scrollY: 78 });
 
             this.setState({ isNewQuest: false });
 
@@ -424,9 +424,6 @@ export default class CaptionArea extends React.Component<IProps, IState>{
                 {window.scrollTo(0, 0)}
                 <Container>
 
-
-                    {/* <div className="row"> */}
-                    {/* <div className="col-26 "> */}
                     <Row>
                         <Col xs={12} md={8} lg={8}>
                             <h1 ><span className="lyric-heading">Which song contains these lyrics?</span></h1>
@@ -488,7 +485,6 @@ export default class CaptionArea extends React.Component<IProps, IState>{
                     </Row>
                     <Row>
                         {/* make a table */}
-                        {/* <table className="table"> */}
 
                         {/* videos*/}
                         <Col xs={12} md={7} lg={4}>
