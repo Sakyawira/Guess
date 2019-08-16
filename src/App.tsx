@@ -177,7 +177,7 @@ class App extends React.Component<{}, IState>{
       console.log('A new user has joined the game.');
     });
 
-    this.state.hubConnection.on("UpdateVideoList", () => {
+    this.state.hubConnection.on("VideoAdded", () => {
       this.state.updateVideoList();
       console.log('A new video has been added!');
     });
