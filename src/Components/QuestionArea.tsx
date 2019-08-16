@@ -156,7 +156,7 @@ export default class QuestionArea extends React.Component<IProps, IState>{
             this.setState({ score: n + 100 });
             this.props.iScore(n + 100);
 
-            this.setState({ scrollY: 78 });
+            this.setState({ scrollY: 91 });
 
             this.setState({ isNewQuest: false });
 
