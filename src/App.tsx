@@ -178,7 +178,7 @@ class App extends React.Component<{}, IState>{
       this.state.updateVideoList();
       console.log('A new video has been added!');
     });
-    this.state.hubConnection.on("ShowUserCounts", (usersCount: any) => {
+    this.state.hubConnection.on("CountUsers", (usersCount: any) => {
       console.log(usersCount);
       this.setState({ usersCountCurrent: usersCount });
     });

@@ -1,8 +1,6 @@
 import Close from '@material-ui/icons/Close'
-// import { IconButton } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField'
-// import AddCircle from '@material-ui/icons/AddCircle'
 import Star from '@material-ui/icons/Star'
 import StarBorder from '@material-ui/icons/StarBorder'
 import * as React from 'react'
@@ -55,7 +53,7 @@ class VideoList extends React.Component<IProps,IState>{
             console.log('A video has been deleted.');
         });
 
-        this.props.hubConnection.on("ShowUserCounts", (usersCount: any)  => {
+        this.props.hubConnection.on("CountUsers", (usersCount: any)  => {
             console.log(usersCount);
             this.setState({usersCountCurrent:usersCount});
         });
@@ -64,8 +62,6 @@ class VideoList extends React.Component<IProps,IState>{
     // delete a video based on its id
     public deleteVideo = (id:any) => {
         this.setState({isLoadingDel: true});  
-        // this.updateList();
-        // fetch("https://guesssongapi.azurewebsites.net/api/Videos/"+id,{
         fetch("https://guesssongapi.azurewebsites.net/api/Videos/"+id,{
             // use the delete method
        
@@ -183,7 +179,6 @@ class VideoList extends React.Component<IProps,IState>{
               this.updateList();
           })
     }
-
 
     // Render method
     public render() {
