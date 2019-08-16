@@ -111,10 +111,11 @@ class App extends React.Component<{}, IState>{
       method: "POST"
     }).then(() => {
       this.state.updateVideoList();
-    }).then(() => { this.state.hubConnection.invoke("VideoAdded") });
+    }).then(() => { this.state.hubConnection.invoke("AddVideo") });
   }
 
-  // A function to add the video, which accepts a string called url
+  // A function to add your name at the end of the game
+  // Your name will then be linked to the score and send to the database
   public addPlayer = (name: string) => {
     this.setState({ isLoading: true });
 
@@ -135,10 +136,10 @@ class App extends React.Component<{}, IState>{
       // call the updateVideoList which calls the updateVideo function in VideoList.tsx
     }).then(() => {
       this.printBoard();
-    }).then(() => { this.state.hubConnection.invoke("VideoAdded") });
+    }).then(() => { this.state.hubConnection.invoke("AddVideo") });
   }
 
-  // update the URL to change the video we are playing
+  // Update the URL to change the video we are playing
   public updateURL = (url: string) => {
     // check if it is currently playing the passed in url
     if (this.state.playingURL === url) {
@@ -170,8 +171,8 @@ class App extends React.Component<{}, IState>{
   }
 
   public componentDidMount = () => {
-    this.state.hubConnection.on("Connect", () => {
-      console.log('A new user has connected to the hub.');
+    this.state.hubConnection.on("Join", () => {
+      console.log('A new user has joined the game.');
     });
 
     this.state.hubConnection.on("UpdateVideoList", () => {
