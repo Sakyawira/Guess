@@ -40,5 +40,24 @@ Which once it finishes sending the data to the API, it will scrolll the window t
 
 
 ## Leader Board
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/leaderboard.png?raw=true" width="640" height="360"/>
+It sorted the highest scoring player to the lowest and it has its own database table as well.
+You can minimize this table and in fact it started as minimized. 
+
+
+## Video List
+Add button has loading state.
+It is from the newest video so people can see the video that they added as soon as the loading is done.
+So for this I need a new logic to put the favourite on top of them.
+Because  before it pushes back which will be print last and unshift favourites which will be printed first.
+Now I need to use a temporary array to store the favourite videos and push it after the rest of the video is finished push to the main array.
+
+# Advanced Features
+Bootstrap.
+Social Media Integration.
+Unit Tests.
+SignalR.
+Accessibility.
+
 
 
