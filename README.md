@@ -60,5 +60,5 @@ SignalR.
 Accessibility.
 
 ## Bootstrap
-<img src="https://github.com/Sakyawira/Guess/blob/master/docs/leaderboard.png?raw=true" width="640" height="360"/>
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/mobile.PNG?raw=true" width="640" height="360"/>
 
