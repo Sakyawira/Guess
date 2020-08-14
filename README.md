@@ -14,3 +14,14 @@ Not in Component: Score UI, Name, Sticky Social Media Buttons.
 Get New Question Button → Has Loading State for FeedBack during loading.
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/GetQ.PNG?raw=true" width="640" height="140"/>
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/Loading.PNG?raw=true" width="640" height="140"/>
+
+
+→ It generates question by calling the API. The API will then first get one random transcription that has a videoID and the webapp will pus it to the array.
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/GetRandomVideo.PNG?raw=true" width="640" height="70"/>
+
+→ It will then get two other random videos that are guarateed to be different from each other.
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/GetRandomTranscription.PNG?raw=true" width="640" height="70"/>
+
+→ Because they are different calls of random there is a chance that the second call will have one of the same video, but I made it so the if one of them is the same it just discard the same one.
+
+
