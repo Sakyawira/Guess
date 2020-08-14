@@ -39,5 +39,6 @@ Something else will also pop up that allows you to enter your name.
 Which once it finishes sending the data to the API, it will scrolll the window to the leader-board section.
 
 
+## Leader Board
 
 
