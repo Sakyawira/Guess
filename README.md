@@ -62,3 +62,11 @@ Accessibility.
 ## Bootstrap
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/mobile.PNG?raw=true" width="640" height="360"/>
 
+## Social Media Integration
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/Screenshot%20(250).png?raw=true" width="640" height="360"/>
+
+
+## Accessibility
+
+
+## SignalR
