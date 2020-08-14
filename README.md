@@ -11,4 +11,6 @@ A quiz web-app that generates questions about songs’ lyrics.
 Not in Component: Score UI, Name, Sticky Social Media Buttons.
 
 ## Question Area
-<img src="https://github.com/Sakyawira/Guess/blob/master/docs/Loading.PNG?raw=true" width="640" height="80"/>
+Get New Question Button → Has Loading State for FeedBack during loading.
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/GetQ.PNG?raw=true" width="640" height="140"/>
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/Loading.PNG?raw=true" width="640" height="140"/>
