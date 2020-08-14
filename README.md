@@ -52,3 +52,12 @@ So for this I need a new logic to put the favourite on top of them.
 Because  before it pushes back which will be print last and unshift favourites which will be printed first.
 Now I need to use a temporary array to store the favourite videos and push it after the rest of the video is finished push to the main array.
 
+# Advanced Features
+Bootstrap.
+Social Media Integration.
+Unit Tests.
+SignalR.
+Accessibility.
+
+
+
