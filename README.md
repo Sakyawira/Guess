@@ -65,8 +65,11 @@ Accessibility.
 ## Social Media Integration
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/Screenshot%20(250).png?raw=true" width="640" height="360"/>
 
-
 ## Accessibility
-
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/dark.png?raw=true" width="640" height="360"/>
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/light.png?raw=true" width="640" height="360"/>
 
 ## SignalR
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/signalr.PNG?raw=true" width="640" height="360"/>
+
+## Unit Testing
