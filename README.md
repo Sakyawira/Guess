@@ -31,7 +31,8 @@ The Choices → Assign the one with transcription to a button that handles on co
 → and the other one to the on false click which decrement the lives.
  So once we have the three / two videos. We will shuffle the array before printing them as buttons.
  
- <img src="https://github.com/Sakyawira/Guess/blob/master/docs/lastlive.png?raw=true/> <img src="https://github.com/Sakyawira/Guess/blob/master/docs/replay.png?raw=true" width="640" height="360"/>
+
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/lastlive.png?raw=true" width="640" height="360"/> <img src="https://github.com/Sakyawira/Guess/blob/master/docs/replay.png?raw=true" width="640" height="360"/>
 
 
 
