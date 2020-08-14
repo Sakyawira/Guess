@@ -40,5 +40,6 @@ Which once it finishes sending the data to the API, it will scrolll the window t
 
 
 ## Leader Board
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/leaderboard.png?raw=true" width="640" height="360"/>
 
 
