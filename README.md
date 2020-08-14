@@ -70,6 +70,6 @@ Accessibility.
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/light.png?raw=true" width="640" height="360"/>
 
 ## SignalR
-<img src="https://github.com/Sakyawira/Guess/blob/master/docs/signalr.PNG?raw=true" width="640" height="360"/>
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/signalr.PNG?raw=true" width="640" height="140"/>
 
 ## Unit Testing
