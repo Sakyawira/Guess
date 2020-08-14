@@ -1,4 +1,4 @@
-# Guess <h1>
+# Guess
 A quiz web-app that generates questions about songs’ lyrics.
   
 ## Four Components
