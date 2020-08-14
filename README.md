@@ -34,6 +34,10 @@ The Choices → Assign the one with transcription to a button that handles on co
 
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/lastlive.png?raw=true" width="640" height="360"/> <img src="https://github.com/Sakyawira/Guess/blob/master/docs/replay.png?raw=true" width="640" height="360"/>
 
+Replay → So once the lives are gone. I use a replay button to reset the question, the scores and the lives.
+Something else will also pop up that allows you to enter your name.
+Which once it finishes sending the data to the API, it will scrolll the window to the leader-board section.
+
 
 
 
