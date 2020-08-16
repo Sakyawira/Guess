@@ -63,7 +63,7 @@ Now I need to use a temporary array to store the favourite videos and push it af
 
 
 ## Bootstrap
-<img src="https://github.com/Sakyawira/Guess/blob/master/docs/mobile.PNG?raw=true" width="640" height="480"/>
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/mobile.PNG?raw=true" width="640" height="420"/>
 
 ## Social Media Integration
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/Screenshot%20(250).png?raw=true" width="640" height="360"/>
