@@ -70,8 +70,8 @@ Now I need to use a temporary array to store the favourite videos and push it af
 
 ## Accessibility
 <p float="left">
-<img src="https://github.com/Sakyawira/Guess/blob/master/docs/dark.png?raw=true" width="426" height="240"/>
-<img src="https://github.com/Sakyawira/Guess/blob/master/docs/light.png?raw=true" width="426" height="240"/>
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/dark.png?raw=true" width="384" height="216"/>
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/light.png?raw=true" width="384" height="216"/>
 </p>
 
 ## SignalR
