@@ -31,15 +31,19 @@ Get New Question Button → Has Loading State for FeedBack during loading.
 
 → Because they are different calls of random there is a chance that the second call will have one of the same video, but I made it so the if one of them is the same it just discard the same one.
 
-
-<img src="https://github.com/Sakyawira/Guess/blob/master/docs/qGenerated.png" width="640" height="360"/> <img src="https://github.com/Sakyawira/Guess/blob/master/docs/correct.png?raw=true" width="640" height="360"/>
+<p float="left">
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/qGenerated.png" width="640" height="360"/> 
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/correct.png?raw=true" width="640" height="360"/>
+</p>
 
 The Choices → Assign the one with transcription to a button that handles on correct click, which increment the score.
 → and the other one to the on false click which decrement the lives.
  So once we have the three / two videos. We will shuffle the array before printing them as buttons.
  
-
-<img src="https://github.com/Sakyawira/Guess/blob/master/docs/lastlive.png?raw=true" width="640" height="360"/> <img src="https://github.com/Sakyawira/Guess/blob/master/docs/replay.png?raw=true" width="640" height="360"/>
+<p float="left">
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/lastlive.png?raw=true" width="384" height="216"/> 
+<img src="https://github.com/Sakyawira/Guess/blob/master/docs/replay.png?raw=true" width="384" height="216"/>
+</p>
 
 Replay → So once the lives are gone. I use a replay button to reset the question, the scores and the lives.
 Something else will also pop up that allows you to enter your name.
