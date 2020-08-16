@@ -1,14 +1,21 @@
 # Guess
 A quiz web-app that generates questions about songs’ lyrics.
   
-## Four Components
+## Components
 1. Header
-2. Question
-3. Video List
-4. Leader-Board.
+2. [Question](https://github.com/Sakyawira/Guess#question-area).
+3. [Video List](https://github.com/Sakyawira/Guess#video-list)
+4. [Leader-Board](https://github.com/Sakyawira/Guess#leader-board).
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/Capture.PNG?raw=true" width="640" height="360"/>
 
 Not in Component: Score UI, Name, Sticky Social Media Buttons.
+
+## Features
+1. [Bootstrap](https://github.com/Sakyawira/Guess#bootstrap).
+2. [Social Media Integration](https://github.com/Sakyawira/Guess#social-media-integration).
+3. [Unit Tests](https://github.com/Sakyawira/Guess#unit-testing).
+4. [SignalR](https://github.com/Sakyawira/Guess#signalr).
+5. [Accessibility](https://github.com/Sakyawira/Guess#accessibility).
 
 ## Question Area
 Get New Question Button → Has Loading State for FeedBack during loading.
@@ -53,11 +60,7 @@ Because  before it pushes back which will be print last and unshift favourites w
 Now I need to use a temporary array to store the favourite videos and push it after the rest of the video is finished push to the main array.
 
 # Advanced Features
-Bootstrap.
-Social Media Integration.
-Unit Tests.
-SignalR.
-Accessibility.
+
 
 ## Bootstrap
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/mobile.PNG?raw=true" width="640" height="360"/>
