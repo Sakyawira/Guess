@@ -72,17 +72,21 @@ Now I need to use a temporary array to store the favourite videos and push it af
 
 ## Bootstrap
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/mobile.PNG?raw=true" width="640" height="420"/>
+Scaleable for different Screen Sizes.
 
 ## Social Media Integration
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/Screenshot%20(250).png?raw=true" width="640" height="360"/>
+Easy social media sharing.
 
 ## Accessibility
 <p float="left">
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/dark.png?raw=true" width="384" height="216"/>
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/light.png?raw=true" width="384" height="216"/>
 </p>
+Support for Dark Mode and Light Mode.
 
 ## SignalR
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/signalr.PNG?raw=true" width="640" height="140"/>
+Shows you how many people are connected to the Web-App.
 
 ## Unit Testing
