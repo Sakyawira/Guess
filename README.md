@@ -33,14 +33,14 @@ Get New Question Button → Has Loading State for FeedBack during loading.
 5. It will then get two other random videos that are guarateed to be different from each other.
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/GetRandomTranscription.PNG?raw=true" width="720" height="32"/>
 
-→ Because they are different calls of random there is a chance that the second call will have one of the same video, but I made it so the if one of them is the same it just discard the same one.
+6. Because they are different calls of random there is a chance that the second API call will have one of the same video, but I made it so the if one of them is the same, the webapp just discard the one of them.
 
 <p float="left">
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/qGenerated.png" width="384" height="216"/> 
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/correct.png?raw=true" width="384" height="216"/>
 </p>
 
-The Choices → Assign the one with transcription to a button that handles on correct click, which increment the score.
+7. The Choices → Assign the one with transcription to a button that handles on correct click, which increment the score.
 → and the other one to the on false click which decrement the lives.
  So once we have the three / two videos. We will shuffle the array before printing them as buttons.
  
@@ -49,7 +49,7 @@ The Choices → Assign the one with transcription to a button that handles on co
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/replay.png?raw=true" width="384" height="216"/>
 </p>
 
-Replay → So once the lives are gone. I use a replay button to reset the question, the scores and the lives.
+8. Replay → So once the lives are gone. I use a replay button to reset the question, the scores and the lives.
 Something else will also pop up that allows you to enter your name.
 Which once it finishes sending the data to the API, it will scrolll the window to the leader-board section.
 
