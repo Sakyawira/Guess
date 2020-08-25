@@ -40,18 +40,16 @@ Get New Question Button → Has Loading State for FeedBack during loading.
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/correct.png?raw=true" width="384" height="216"/>
 </p>
 
-7. The Choices → Assign the one with transcription to a button that handles on correct click, which increment the score.
-→ and the other one to the on false click which decrement the lives.
- So once we have the three / two videos. We will shuffle the array before printing them as buttons.
+7. For the Choices, we assign the video with transcription to a button that handles on correct click, which increments the score. And the two other ones to the on false click which decrement the lives. So once we have the three / two videos, we will shuffle the array before printing them as buttons.
  
 <p float="left">
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/lastlive.png?raw=true" width="384" height="216"/> 
 <img src="https://github.com/Sakyawira/Guess/blob/master/docs/replay.png?raw=true" width="384" height="216"/>
 </p>
 
-8. Replay → So once the lives are gone. I use a replay button to reset the question, the scores and the lives.
+8. Replay Button→ So once the lives are gone. I use a replay button to reset the question, the scores, and the lives.
 Something else will also pop up that allows you to enter your name.
-Which once it finishes sending the data to the API, it will scrolll the window to the leader-board section.
+Once it finishes sending the data to the API, it will scroll the window to the leaderboard section.
 
 
 ## Leader Board
