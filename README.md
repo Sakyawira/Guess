@@ -1,5 +1,5 @@
 # Guess
-A quiz web-app that generates questions about songs’ lyrics.
+A quiz web-app that generates questions about songs’ lyrics. This repo contains the source code for the project's Front-End, for its Back-End please look [here](https://github.com/Sakyawira/GuessSongAPI).
   
 ## Components
 1. Header
